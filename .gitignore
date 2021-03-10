@@ -11,6 +11,8 @@
 bin/**
 tmp/**
 tmp/**/*
+*.idea*
+
 *.tmp
 *.bak
 *.swp

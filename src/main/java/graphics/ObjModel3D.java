@@ -1,4 +1,4 @@
-package models;
+package graphics;
 
 import com.jogamp.opengl.GL2;
 import com.sun.istack.NotNull;

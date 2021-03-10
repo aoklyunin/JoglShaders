@@ -14,5 +14,5 @@ void main()
 	vec4 modelPos = u_modelMat44 * vec4( inPosition, 1.0 );
     vec4 viewPos  = u_viewMat44 * modelPos;
 	gl_Position = u_projectionMat44 * viewPos;
-    //gl_Position = viewPos;
+    gl_Position = viewPos;
 }

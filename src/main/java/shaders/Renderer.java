@@ -1,5 +1,6 @@
 package shaders;
 
+import java.awt.event.*;
 import java.io.File;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
@@ -25,7 +26,7 @@ import static com.jogamp.opengl.GL2ES2.GL_MAX_VERTEX_ATTRIBS;
  *
  * @author serhiy
  */
-public class Renderer implements GLEventListener {
+public class Renderer implements GLEventListener, KeyListener, MouseListener, MouseMotionListener {
 
     private Cube cube = new Cube();
     private FloatBuffer vertexBuffer;
@@ -110,13 +111,13 @@ public class Renderer implements GLEventListener {
         );
 
         gl2.glUniformMatrix4fv(
-                gl2.glGetUniformLocation(shaderProgram.getProgramId(), "u_projectionMat44"),
-                1, true, camera.getPerspectiveBuffer()
+                gl2.glGetUniformLocation(shaderProgram.getProgramId(), "u_viewMat44"),
+                1, true, camera.getLookAtBuffer()
         );
 
         gl2.glUniformMatrix4fv(
-                gl2.glGetUniformLocation(shaderProgram.getProgramId(), "u_viewMat44"),
-                1, true, camera.getLookAtBuffer()
+                gl2.glGetUniformLocation(shaderProgram.getProgramId(), "u_projectionMat44"),
+                1, true, camera.getPerspectiveBuffer()
         );
 
         gl2.glDrawElements(GL2.GL_TRIANGLES, cube.getIndices().length,
@@ -136,5 +137,76 @@ public class Renderer implements GLEventListener {
     public void reshape(GLAutoDrawable glAutoDrawable, int x, int y, int width,
                         int height) {
         /* no action to be taken on reshape */
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_W:
+                camera.moveFroward(
+                        0.1
+                );
+                break;
+            case KeyEvent.VK_S:
+                camera.moveBackward(
+                        0.1
+                );
+                break;
+            case KeyEvent.VK_A:
+                camera.moveLeft(
+                        0.1
+                );
+                break;
+            case KeyEvent.VK_D:
+                camera.moveRight(
+                        0.1
+                );
+                break;
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+
     }
 }

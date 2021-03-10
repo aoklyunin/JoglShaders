@@ -24,9 +24,15 @@ public class Main {
 				jFrame.setSize(640, 480);
 				
 				GLJPanel glJPanel = new GLJPanel(glCapabilities);
-				glJPanel.addGLEventListener(new Renderer(glJPanel));
+				Renderer renderer = new Renderer(glJPanel);
+				glJPanel.addGLEventListener(renderer);
 				glJPanel.setSize(jFrame.getSize());
-				
+
+				// вешаем обработчики
+				glJPanel.addKeyListener(renderer);
+				glJPanel.addMouseListener(renderer);
+				glJPanel.addMouseMotionListener(renderer);
+
 				jFrame.getContentPane().add(glJPanel);
 				
 				jFrame.setVisible(true);

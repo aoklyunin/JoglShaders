@@ -7,9 +7,13 @@ import linearAlgebra.LinearAlgebra;
 import math.Vector2d;
 import math.Vector3d;
 import org.joml.Matrix4d;
+import org.joml.Matrix4f;
+import org.joml.Vector2f;
+import org.joml.Vector3f;
 import org.lwjgl.BufferUtils;
 
 import java.nio.DoubleBuffer;
+import java.nio.FloatBuffer;
 
 /**
  * Состояние камеры 2D существа
@@ -66,6 +70,11 @@ public class Camera {
      */
     @JsonIgnore
     private double upZ;
+
+    float fov_y = 90f;
+    Vector2f vp = new Vector2f(640, 480);
+    float near = 0.01f;
+    float far = 100.0f;
 
     /**
      * Конструктор камеры
@@ -129,6 +138,55 @@ public class Camera {
      */
     public Camera() {
 
+    }
+
+    public FloatBuffer getPerspectiveBuffer() {
+        FloatBuffer fb = BufferUtils.createFloatBuffer(16);
+        return getPerspectiveMatrix().get(fb);
+    }
+
+    public Matrix4f getPerspectiveMatrix() {
+        return new Matrix4f().perspective(
+                (float) Math.toRadians(fov_y), vp.x / vp.y, near, far
+        ).m33(1);
+//        float fn = far + near;
+//        float f_n = far - near;
+//        float r = vp.x / vp.y;
+//        float t = 1.0f / (float)Math.tan(Math.toRadians(fov_y) / 2.0f);
+//
+//        return new Matrix4f(
+//                t / r, 0.0f, 0.0f, 0.0f,
+//                0.0f, t, 0.0f, 0.0f,
+//                0.0f, 0.0f, -fn / f_n, -1.0f,
+//                0.0f, 0.0f, -2.0f * far * near / f_n, 1.0f
+//        );
+    }
+
+    public FloatBuffer getLookAtBuffer() {
+      //  System.out.println(getLookAtMatrix());
+        FloatBuffer fb = BufferUtils.createFloatBuffer(16);
+        return getLookAtMatrix().get(fb);
+    }
+
+    public Matrix4f getLookAtMatrix() {
+       // System.out.println("________________________");
+        //System.out.println(
+//       return new Matrix4f().setLookAt(
+//                (float)posX,(float)posY,(float)posZ,
+//               (float)dirX+(float)posX,(float)dirY+(float)posY,(float)dirZ+(float)posZ,
+//                (float)upX,(float)upY,(float)upZ
+//        );
+        Vector3d mz = getDir().norm();
+        Vector3d my = getUp();
+        Vector3d mx = Vector3d.cross(my, mz).norm();
+        my = Vector3d.cross(mz, mx);
+        return new Matrix4f(
+                (float)mx.x,  (float)my.x,  (float)mz.x, 0.0f,
+                (float)mx.y,  (float)my.y,  (float)mz.y, 0.0f,
+                (float)mx.z,  (float)my.z,  (float)mz.z, 0.0f,
+                (float)Vector3d.dot(mx, getPos()),  (float)Vector3d.dot(my, getPos()),
+                (float)Vector3d.dot(new Vector3d(-mz.x, -mz.y, -mz.z), getPos()), 1.0f
+        );
     }
 
     /**

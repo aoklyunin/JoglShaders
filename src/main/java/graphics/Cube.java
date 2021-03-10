@@ -1,4 +1,4 @@
-package shaders;
+package graphics;
 
 /**
  * Represents the cube with different color shapes.

@@ -50,7 +50,6 @@ public class ShaderProgram {
 					gl2.glGetAttribLocation(programId, "inPosition"));
 			shaderAttributeLocations.put(EShaderAttribute.COLOR,
 					gl2.glGetAttribLocation(programId, "inColor"));
-
 			initialized = true;
 		} catch (Exception e) {
 			e.printStackTrace();

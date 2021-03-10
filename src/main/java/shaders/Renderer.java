@@ -1,6 +1,7 @@
 package shaders;
 
 import java.io.File;
+import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.Arrays;
@@ -9,7 +10,14 @@ import com.jogamp.common.nio.Buffers;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
+import com.jogamp.opengl.awt.GLJPanel;
+import graphics.Camera;
+import graphics.Cube;
+import org.joml.Matrix4d;
+import org.joml.Matrix4f;
+import org.lwjgl.BufferUtils;
 
+import static com.jogamp.opengl.GL.GL_FALSE;
 import static com.jogamp.opengl.GL2ES2.GL_MAX_VERTEX_ATTRIBS;
 
 /**
@@ -24,6 +32,13 @@ public class Renderer implements GLEventListener {
     private IntBuffer indexBuffer;
     private FloatBuffer colorBuffer;
     private ShaderProgram shaderProgram;
+    private Camera camera = new Camera(-1, 0, 0, 1, 0, 0, 0, 0, 1);
+
+    private GLJPanel gljPanel;
+
+    public Renderer(GLJPanel gljPanel) {
+        this.gljPanel = gljPanel;
+    }
 
     @Override
     public void init(GLAutoDrawable glAutoDrawable) {
@@ -66,6 +81,7 @@ public class Renderer implements GLEventListener {
 
         gl2.glUseProgram(shaderProgram.getProgramId());
 
+
         gl2.glEnableVertexAttribArray(shaderProgram
                 .getShaderAttributeLocation(EShaderAttribute.POSITION));
         gl2.glEnableVertexAttribArray(shaderProgram
@@ -79,6 +95,30 @@ public class Renderer implements GLEventListener {
                         .getShaderAttributeLocation(EShaderAttribute.COLOR), 3,
                 GL2.GL_FLOAT, false, 0, colorBuffer.rewind());
 
+        FloatBuffer objectTransform = BufferUtils.createFloatBuffer(16);
+        objectTransform = new Matrix4d(
+                1, 0, 0, 0.3f,
+                0, 1, 0, 0.2f,
+                0, 0, 1, 0,
+                0, 0, 0, 1
+        ).transpose().get(objectTransform);
+        FloatBuffer fb = BufferUtils.createFloatBuffer(16);
+
+        gl2.glUniformMatrix4fv(
+                gl2.glGetUniformLocation(shaderProgram.getProgramId(), "u_modelMat44"),
+                1, true, objectTransform
+        );
+
+        gl2.glUniformMatrix4fv(
+                gl2.glGetUniformLocation(shaderProgram.getProgramId(), "u_projectionMat44"),
+                1, true, camera.getPerspectiveBuffer()
+        );
+
+        gl2.glUniformMatrix4fv(
+                gl2.glGetUniformLocation(shaderProgram.getProgramId(), "u_viewMat44"),
+                1, true, camera.getLookAtBuffer()
+        );
+
         gl2.glDrawElements(GL2.GL_TRIANGLES, cube.getIndices().length,
                 GL2.GL_UNSIGNED_INT, indexBuffer.rewind());
 
@@ -88,6 +128,8 @@ public class Renderer implements GLEventListener {
                 .getShaderAttributeLocation(EShaderAttribute.COLOR));
 
         gl2.glUseProgram(0);
+        //System.out.println("test");
+        gljPanel.repaint();
     }
 
     @Override

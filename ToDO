@@ -1,0 +1,13 @@
+        gl2.getGL3().glUniformMatrix4dv(
+                gl2.getGL3().glGetUniformLocation(shaderProgram.getProgramId(), "u_projectionMat44"),
+                1, false,
+                camera.getPerspectiveBuffer()
+        );
+
+        gl2.getGL3().glUniformMatrix4dv(
+                gl2.getGL3().glGetUniformLocation(shaderProgram.getProgramId(), "u_viewMat44"),
+                1, false,
+                camera.getLookAtBuffer()
+        );
+
+

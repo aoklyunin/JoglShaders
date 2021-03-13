@@ -90,10 +90,6 @@ public class RealTimeWorldController extends WorldController implements MouseCon
      */
     @Nullable
     private Vector3d creatureStartRotationAngles;
-    /**
-     * Флаг, нужно ли рисовать моедь существа
-     */
-    protected boolean creatureModelRendering;
 
     /**
      * Конструктор контроллера мира реального времени
@@ -108,7 +104,6 @@ public class RealTimeWorldController extends WorldController implements MouseCon
         active = false;
         fullScreenWorld = false;
         lastProcessTime = System.nanoTime();
-        creatureModelRendering = true;
 
         sourceFullScreenWorldCS = new CoordinateSystem2i(
                 0,
@@ -393,8 +388,7 @@ public class RealTimeWorldController extends WorldController implements MouseCon
         if (worldMouseMovingStart != null && worldCS.checkCoords(coords)) {
             // получаем координаты клика в СК мира
             dragWorld(GLController.GL_CS.getCoords(coords, worldCS), mouseButton);
-        }
-        if (creatureMouseMovingStart != null) {
+        } else if (creatureMouseMovingStart != null && creatureCS.checkCoords(coords)) {
             dragCreature(GLController.GL_CS.getCoords(coords, creatureCS), mouseButton);
         }
     }
@@ -504,8 +498,7 @@ public class RealTimeWorldController extends WorldController implements MouseCon
     public void display(GL2 gl2) {
         if (GUIApplication.isRenderEnabled()) {
             if (!fullScreenWorld) {
-                if (creatureModelRendering)
-                    renderCreatureModel(gl2);
+                renderCreatureModel(gl2);
             }
             renderWorld(gl2);
         }
@@ -513,7 +506,7 @@ public class RealTimeWorldController extends WorldController implements MouseCon
 
     /**
      * Строковое представление объекта вида:
-     * "worldCS, glRenderWorldCS, active, creatureCS, creatureModelRendering, fullScreenWorld, super.getString()"
+     * "worldCS, glRenderWorldCS, active, creatureCS, fullScreenWorld, super.getString()"
      *
      * @return строковое представление объекта
      */
@@ -523,7 +516,6 @@ public class RealTimeWorldController extends WorldController implements MouseCon
                 ", " + glRenderWorldCS +
                 ", " + active +
                 ", " + creatureCS +
-                ", " + creatureModelRendering +
                 ", " + fullScreenWorld +
                 ", " + super.getString();
     }
@@ -586,13 +578,5 @@ public class RealTimeWorldController extends WorldController implements MouseCon
         return creatureCS;
     }
 
-    /**
-     * Получить флаг, рисуется ли существо
-     *
-     * @return рисуется ли существо
-     */
-    public boolean isCreatureModelRendering() {
-        return creatureModelRendering;
-    }
 
 }

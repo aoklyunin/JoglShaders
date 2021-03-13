@@ -12,12 +12,10 @@ import misc.GLAlgorithms;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import world.base.RealTimeWorld;
-import world.states.RealTimeWorldState;
 import world.states.WorldState;
 import world.world3D.params.RealTime3DWorldParams;
 import world.world3D.states.RealTime3DWorldState;
 
-import java.util.Map;
 import java.util.Objects;
 
 
@@ -71,11 +69,6 @@ public abstract class RealTime3DWorld extends RealTimeWorld {
     @NotNull
     private CoordinateSystem2d renderSensorGridCS;
     /**
-     * СК рисования  сетки моторов
-     */
-    @NotNull
-    private CoordinateSystem2d renderMotorGridCS;
-    /**
      * Отношение ширины окна к высоте
      */
     private final double connectorGridDistortion;
@@ -103,7 +96,6 @@ public abstract class RealTime3DWorld extends RealTimeWorld {
                 getWorldParams().getRealTime3DWorldParams(), getWorldInfo()
         );
 
-
         for (Creature creature : getWorldStory().getCreatures()) {
             creature.getCamera().setPos(new Vector3d(0, 0, 0.5));
             creature.getCamera().setDir(new Vector3d(1.0, 0, 0));
@@ -119,12 +111,10 @@ public abstract class RealTime3DWorld extends RealTimeWorld {
         connectorGridDistortion = (double) clientHeight / clientWidth * windowDivide.y / (1 - windowDivide.x);
         // создаём системы для рисования решёток коннекторов
         double offset = 0.05;
-        renderSensorGridCS = new CoordinateSystem2d(offset, 0.5 - offset / 2, offset, 1.0 - offset);
-        renderMotorGridCS = new CoordinateSystem2d(0.5 + offset / 2, 1.0 - offset, offset, 1.0 - offset);
+        renderSensorGridCS = new CoordinateSystem2d(offset, 1.0 - offset, offset, 1.0 - offset);
 
         // делаем обе системы квадратными
         renderSensorGridCS = renderSensorGridCS.getQuadCS(connectorGridDistortion);
-        renderMotorGridCS = renderMotorGridCS.getQuadCS(connectorGridDistortion);
 
         checkNewNDAPath = (String newDNAPath) -> true;
     }
@@ -338,8 +328,6 @@ public abstract class RealTime3DWorld extends RealTimeWorld {
         if (Double.compare(that.connectorGridDistortion, connectorGridDistortion) != 0) return false;
         if (!Objects.equals(renderSensorGridCS, that.renderSensorGridCS))
             return false;
-        if (!Objects.equals(renderMotorGridCS, that.renderMotorGridCS))
-            return false;
         return Objects.equals(realTimeWorld3DInfo, that.realTimeWorld3DInfo);
     }
 
@@ -349,7 +337,6 @@ public abstract class RealTime3DWorld extends RealTimeWorld {
         long temp;
         result = 31 * result + cameraMode.hashCode();
         result = 31 * result + (renderSensorGridCS != null ? renderSensorGridCS.hashCode() : 0);
-        result = 31 * result + (renderMotorGridCS != null ? renderMotorGridCS.hashCode() : 0);
         temp = Double.doubleToLongBits(connectorGridDistortion);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (realTimeWorld3DInfo != null ? realTimeWorld3DInfo.hashCode() : 0);

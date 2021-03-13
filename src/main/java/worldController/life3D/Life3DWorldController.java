@@ -6,6 +6,7 @@ import com.jogamp.opengl.awt.GLCanvas;
 import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;
 import coordinateSystem.CoordinateSystem2d;
+import coordinateSystem.CoordinateSystem2i;
 import creature.base.Creature;
 import graphics.Camera;
 import gui.GUIApplication;
@@ -35,6 +36,11 @@ public class Life3DWorldController extends LifeWorldController {
      * Время последней обработки мира
      */
     private long lastLife3DProcessTime;
+    /**
+     * экранная система координат существа
+     */
+    @NotNull
+    private final CoordinateSystem2i connectorCS;
 
     /**
      * Конструктор контроллера мира реального времени
@@ -49,7 +55,14 @@ public class Life3DWorldController extends LifeWorldController {
                 -2, -2, -2,
                 0, 0, 1
         );
-        creatureModelRendering = false;
+        connectorCS = new CoordinateSystem2i(
+                (int) (getWorldControllerParams().getWindowDivide().x
+                        * GUIApplication.clientWidth),
+                GUIApplication.clientWidth,
+                (int) (GUIApplication.clientHeight *
+                        getWorldControllerParams().getWindowDivide().y),
+                GUIApplication.clientHeight
+        );
         lastLife3DProcessTime = System.currentTimeMillis();
     }
 
@@ -128,7 +141,7 @@ public class Life3DWorldController extends LifeWorldController {
      */
     private void renderConnectorGrid(GL2 gl2) {
         // задаём область рисования на экране: x, y, width, height
-        getCreatureCS().setViewPort(gl2);
+        connectorCS.setViewPort(gl2);
 
         // выбираем матрицу проекций
         gl2.glMatrixMode(GL_PROJECTION);
@@ -168,16 +181,25 @@ public class Life3DWorldController extends LifeWorldController {
     }
 
     /**
+     * Обработка перемещения мыши с зажатой кнопкой
+     *
+     * @param coords      координаты мыши
+     * @param mouseButton номер кнопки
+     */
+    @Override
+    public void processMouseDragged(@NotNull Vector2i coords, int mouseButton) {
+        super.processMouseDragged(coords, mouseButton);
+        if (connectorCS.checkCoords(coords))
+            dragConnector(GLController.GL_CS.getCoords(coords, connectorCS), mouseButton);
+    }
+
+    /**
      * Перемещения мыши с зажатой кнопкой по области рисования мира
      *
      * @param mousePos положение мыши в СК OpenGL
      */
-    protected void dragCreature(@NotNull Vector2d mousePos, int mouseButton) {
-        if (creatureModelRendering) {
-            super.dragCreature(Objects.requireNonNull(mousePos), mouseButton);
-        } else {
-            getWorld().getRealTime3DWorld().clickConnectorGrid(mousePos, mouseButton);
-        }
+    protected void dragConnector(@NotNull Vector2d mousePos, int mouseButton) {
+        getWorld().getRealTime3DWorld().clickConnectorGrid(mousePos, mouseButton);
     }
 
     /**
@@ -202,9 +224,7 @@ public class Life3DWorldController extends LifeWorldController {
         super.processKeyPress(keyCode);
         switch (keyCode) {
             case KeyEvent.VK_G:
-                if (GUIApplication.flgCtrl) {
-                    creatureModelRendering = !creatureModelRendering;
-                } else
+                if (GUIApplication.flgCtrl)
                     getWorld().getRealTime3DWorld().switchCameraMode();
                 break;
             case KeyEvent.VK_C:
@@ -222,7 +242,7 @@ public class Life3DWorldController extends LifeWorldController {
      */
     @Override
     public void process(@NotNull World world) {
-        double movingDelta =  (double)(System.nanoTime() - lastLife3DProcessTime)/ 10E9;
+        double movingDelta = (double) (System.nanoTime() - lastLife3DProcessTime) / 10E9;
         lastLife3DProcessTime = System.nanoTime();
         super.process(Objects.requireNonNull(world));
         switch (getWorld().getRealTime3DWorld().getCameraMode()) {
@@ -315,11 +335,9 @@ public class Life3DWorldController extends LifeWorldController {
     public void processMouseClick(@NotNull Vector2i coords, int mouseButton) {
         super.processMouseClick(Objects.requireNonNull(coords), mouseButton);
         if (getCreatureCS().checkCoords(coords)) { // если координаты попадают в СК мира
-            if (!creatureModelRendering) {
-                getWorld().getRealTime3DWorld().clickConnectorGrid(
-                        GLController.GL_CS.getCoords(coords, getCreatureCS()), mouseButton
-                );
-            }
+            getWorld().getRealTime3DWorld().clickConnectorGrid(
+                    GLController.GL_CS.getCoords(coords, getCreatureCS()), mouseButton
+            );
         }
     }
 
@@ -338,8 +356,7 @@ public class Life3DWorldController extends LifeWorldController {
         if (GUIApplication.isRenderEnabled()) {
             super.display(gl2);
             if (!isFullScreenWorld()) {
-                if (!creatureModelRendering)
-                    renderConnectorGrid(gl2);
+                renderConnectorGrid(gl2);
             }
         }
     }

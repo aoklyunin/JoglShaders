@@ -156,9 +156,8 @@ public class RealTimeWorldController extends WorldController implements MouseCon
      * Обработка мира
      *
      * @param world мир, который нужно обработать
-     * @return время, затраченное на обработку
      */
-    public long process(@NotNull World world) {
+    public void process(@NotNull World world) {
         long delta = System.nanoTime() - lastProcessTime;
         if (!active)
             try {
@@ -174,7 +173,6 @@ public class RealTimeWorldController extends WorldController implements MouseCon
                 world.getStoryWorld().tick();
             }
         }
-        return delta;
     }
 
     /**

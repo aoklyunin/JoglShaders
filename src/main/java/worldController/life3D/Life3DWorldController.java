@@ -31,6 +31,10 @@ public class Life3DWorldController extends LifeWorldController {
      */
     @NotNull
     private final Camera camera;
+    /**
+     * Время последней обработки мира
+     */
+    private long lastLife3DProcessTime;
 
     /**
      * Конструктор контроллера мира реального времени
@@ -46,6 +50,7 @@ public class Life3DWorldController extends LifeWorldController {
                 0, 0, 1
         );
         creatureModelRendering = false;
+        lastLife3DProcessTime = System.currentTimeMillis();
     }
 
     /**
@@ -216,9 +221,10 @@ public class Life3DWorldController extends LifeWorldController {
      * @param world мир, который нужно обработать
      */
     @Override
-    public long process(@NotNull World world) {
-        long delta = super.process(Objects.requireNonNull(world));
-        double movingDelta = (double) super.process(world) / 10E9;
+    public void process(@NotNull World world) {
+        double movingDelta =  (double)(System.nanoTime() - lastLife3DProcessTime)/ 10E9;
+        lastLife3DProcessTime = System.nanoTime();
+        super.process(Objects.requireNonNull(world));
         switch (getWorld().getRealTime3DWorld().getCameraMode()) {
             case OBSERVER -> {
                 if (flgKeyDown[KeyEvent.VK_W])
@@ -297,7 +303,6 @@ public class Life3DWorldController extends LifeWorldController {
                 }
             }
         }
-        return delta;
     }
 
     /**

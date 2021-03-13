@@ -1,10 +1,12 @@
-# Lesson 2 of JOGL Tutorial: Rendering Colored Cube Using Shaders
+# Приложение для тестирования рассчёта изображения при помощи шейдеров OpenGL
 
-## Running the example
+Класс, запускающий шейдеры: gui.TestShaders
 
-The project requires Maven to be built from sources. To run the application for the source code, you can execute the following command in the root of the project:
-```
-	mvn exec:java
-```
+Главный исполняемый файл: gui.GUIApplication
 
-The tutorial can be found at: http://www.coding-daddy.xyz/node/16
+Все классы для работы с шейдерами лежат в модуле shaders
+
+Классы для рисования лежат в модуле offscreen
+
+Сейчас сделан класс GLOffscreenRenderer, который реализует как рисование 
+в окне, так и фоновое offscreen рисование

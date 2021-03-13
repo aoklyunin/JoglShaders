@@ -1,0 +1,138 @@
+{
+  "@class": "world.world3D.params.Life3DWorldParams",
+  "type": "FOOD_3D_WORLD",
+  "name": "food2D",
+  "initStoryPath": "",
+  "resourceFieldPath": "field3D/foodField3D.json",
+  "maxConsoleLinesCnt": 45,
+  "renderConsoleTickCnt": 150,
+  "statesListName": "foodWorld1",
+  "flgOverrideStory": false,
+  "recordStory": true,
+  "saveInterval": 1,
+  "min": {
+    "x": -20.0,
+    "y": -20.0,
+    "z": 0.0
+  },
+  "max": {
+    "x": 20.0,
+    "y": 20.0,
+    "z": 0.0
+  },
+  "creatureInWorldPlaceInstructions": [
+    {
+      "path": "creatures3D/simple_creature_3d.json",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "id": 0
+    }
+  ],
+  "storyScrollerParams": {
+    "@class": "scrollers.params.SimpleScrollerParams",
+    "type": "HORIZONTAL",
+    "renderPosMin": 0.005,
+    "renderPosMax": 0.045,
+    "divideCoeff": 5,
+    "renderOffset": 0.075,
+    "renderSize": 0.8,
+    "accuracy": 0.05
+  },
+  "captionParamsMap": {
+    "meanEnergy": {
+      "pos": {
+        "x": 0.56,
+        "y": 0.97
+      }
+    },
+    "fps": {
+      "pos": {
+        "x": 0.82,
+        "y": 0.9
+      }
+    },
+    "frequency": {
+      "pos": {
+        "x": 0.82,
+        "y": 0.93
+      }
+    },
+    "creatureCnt": {
+      "pos": {
+        "x": 0.82,
+        "y": 0.87
+      }
+    },
+    "storySize": {
+      "pos": {
+        "x": 0.82,
+        "y": 0.84
+      }
+    },
+    "foodInfo": {
+      "pos": {
+        "x": 0.82,
+        "y": 0.81
+      }
+    },
+    "cameraMode": {
+      "pos": {
+        "x": 0.82,
+        "y": 0.78
+      }
+    },
+    "random": {
+      "pos": {
+        "x": 0.82,
+        "y": 0.72
+      }
+    },
+    "satietyInfo": {
+      "fontSize": 18,
+      "pos": {
+        "x": 0.02,
+        "y": 0.05
+      },
+      "step": 0.03
+    },
+    "standAloneCreatureInfo": {
+      "fontSize": 30,
+      "pos": {
+        "x": 0.9,
+        "y": 0.3
+      },
+      "step": 0.05
+    },
+    "console": {
+      "fontSize": 16,
+      "pos": {
+        "x": 0.05,
+        "y": 0.05
+      },
+      "step": 0.02,
+      "color": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 0.7
+      }
+    },
+    "selectedZLayer": {
+      "fontSize": 26,
+      "pos": {
+        "x": 0.76,
+        "y": 0.94
+      }
+    },
+    "creatureTerminal": {
+      "fontSize": 16,
+      "pos": {
+        "x": 0.76,
+        "y": 0.94
+      }
+    }
+  }
+}

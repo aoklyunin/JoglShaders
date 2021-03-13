@@ -13,7 +13,7 @@ import shaders.Renderer;
  * 
  * @author serhiy
  */
-public class Main {
+public class TestShaders {
 	public static void main(String[] args) {
 		final GLProfile glProfile = GLProfile.getDefault();
 		final GLCapabilities glCapabilities = new GLCapabilities(glProfile);

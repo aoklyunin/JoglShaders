@@ -187,17 +187,16 @@ public class ObjModel3D {
      * Нарисовать модель
      *
      * @param gl2             переменная OpenGL
-     * @param colorSaturation насыщенность цвета
      */
-    public void render(GL2 gl2, double colorSaturation) {
+    public void render(GL2 gl2) {
         gl2.glPushMatrix();
 
         gl2.glBegin(GL_TRIANGLES);
         for (int index : indices) {
             gl2.glColor3d(
-                    objModel3DParams.getColor().x * (0.3 + colorSaturation * 0.7),
-                    objModel3DParams.getColor().y * (0.3 + colorSaturation * 0.7),
-                    objModel3DParams.getColor().z * (0.3 + colorSaturation * 0.7));
+                    objModel3DParams.getColor().x ,
+                    objModel3DParams.getColor().y,
+                    objModel3DParams.getColor().z );
 
             gl2.glVertex3f(
                     vertices[index * 3],

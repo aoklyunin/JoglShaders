@@ -1,0 +1,26 @@
+{
+  "type": "REAL_TIME_3D",
+  "@class": "worldController.life3D.Life3DWorldControllerParams",
+  "windowDivide": {
+    "x": 0.6,
+    "y": 0.35
+  },
+  "fps": 25,
+  "frequency": 200,
+  "creatureRotationCoeff": 100.0,
+  "cameraRotationSpeed": {
+    "x": 1.0,
+    "y": 1.0
+  },
+  "cameraMovingSpeed": {
+    "x": 0.3,
+    "y": 0.3,
+    "z": 0.3
+  },
+  "worldPath": "worlds3D/foodWorld3D.json",
+  "backgroundColor": {
+    "x": 0.11,
+    "y": 0.02,
+    "z": 0.11
+  }
+}

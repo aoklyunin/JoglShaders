@@ -21,7 +21,7 @@ import java.nio.FloatBuffer;
 public class Camera {
 
     /**
-     * id состояния мозга
+     * id состояния камеры
      */
     @JsonIgnore
     private int id;

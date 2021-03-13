@@ -1,0 +1,6 @@
+{
+  "startController": 0,
+  "controllers": [
+    "conf/worldControllers/life3DWorldController.json"
+  ]
+}

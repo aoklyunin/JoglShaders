@@ -1,0 +1,26 @@
+{
+  "name": "simple_creature_1",
+  "@class": "creature.creature3D.Creature3DParams",
+  "sensorGridSize": {
+    "x": 40,
+    "y": 40
+  },
+  "sensorGridMaxValue": 255,
+  "visionGridSize": {
+    "x": 40,
+    "y": 40
+  },
+  "creatureModelParams": {
+    "path": "creatures/quadric_creature.obj",
+    "color": {
+      "x": 0.7,
+      "y": 0.7,
+      "z": 1.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    }
+  }
+}

@@ -321,8 +321,6 @@ public class GUIApplication implements KeyListener, MouseListener, MouseMotionLi
      * @param controllerPos номер контроллера
      */
     private void setWorldControllerPos(int controllerPos) {
-        if (controllerPos >= worldControllers.size() - 2)
-            controllerPos = worldControllers.size() - 3;
         if (controllerPos < 0)
             controllerPos = 0;
         if (getSelectedWorldController() != null)

@@ -3,7 +3,7 @@ package world.world3D.params;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.aoklyunin.javaGLHelper.CaptionParams;
-import com.github.aoklyunin.javaScrollers.params.SimpleScrollerParams;
+import com.github.aoklyunin.javaGLHelper.scrollers.params.SimpleScrollerParams;
 import com.sun.istack.NotNull;
 import jMath.aoklyunin.github.com.vector.Vector3d;
 import world.params.CreatureInWorldParams;

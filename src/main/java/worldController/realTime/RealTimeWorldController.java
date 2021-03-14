@@ -1,6 +1,6 @@
 package worldController.realTime;
 
-import com.github.aoklyunin.javaScrollers.scrollers.SimpleScroller;
+import com.github.aoklyunin.javaGLHelper.scrollers.scrollers.SimpleScroller;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.sun.istack.NotNull;

@@ -4,7 +4,7 @@
   "addValueProbability": 0.03,
   "offscreenRendererParams": {
     "@class": "offscreen.params.OffscreenRendererParams",
-    "type": "GL",
+    "type": "SIMPLE",
     "objectModelIndexes": [
       0
     ],

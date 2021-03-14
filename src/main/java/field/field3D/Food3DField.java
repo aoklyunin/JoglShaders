@@ -2,7 +2,7 @@ package field.field3D;
 
 import com.github.aoklyunin.javaGLHelper.CaptionParams;
 import com.github.aoklyunin.javaGLHelper.GLTextController;
-import com.github.aoklyunin.javaScrollers.scrollers.ProgressBar;
+import com.github.aoklyunin.javaGLHelper.scrollers.scrollers.ProgressBar;
 import com.jogamp.opengl.GL2;
 import com.sun.istack.NotNull;
 import field.base.InfluenceFieldState;

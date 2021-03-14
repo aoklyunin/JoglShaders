@@ -63,17 +63,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.aoklyunin</groupId>
-            <artifactId>javaScrollers</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.aoklyunin</groupId>
             <artifactId>jCollections</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.aoklyunin</groupId>
-            <artifactId>javaCombiners</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -3,7 +3,7 @@
   "type": "FOOD_3D_WORLD",
   "name": "food2D",
   "initStoryPath": "",
-  "resourceFieldPath": "field3D/foodField3D.json",
+  "resourceFieldPath": "field3D/foodSimpleOffscreenField3D.json",
   "maxConsoleLinesCnt": 45,
   "renderConsoleTickCnt": 150,
   "statesListName": "foodWorld1",

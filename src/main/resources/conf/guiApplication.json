@@ -1,6 +1,7 @@
 {
   "startController": 0,
   "controllers": [
-    "conf/worldControllers/life3DWorldController.json"
+    "conf/worldControllers/life3DWorldController.json",
+    "conf/worldControllers/life3DSimpleOffscreenWorldController.json"
   ]
 }

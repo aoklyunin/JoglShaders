@@ -2,10 +2,10 @@ package field.field3D.params;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.aoklyunin.javaCombiners.ranges.primitive.DoubleRange;
-import com.github.aoklyunin.javaCombiners.ranges.vector.Vector3dRange;
+import com.github.aoklyunin.jCollections.combiners.ranges.primitive.DoubleRange;
+import com.github.aoklyunin.jCollections.combiners.ranges.vector.Vector3dRange;
 import com.github.aoklyunin.javaGLHelper.CaptionParams;
-import com.github.aoklyunin.javaScrollers.params.SimpleScrollerParams;
+import com.github.aoklyunin.javaGLHelper.scrollers.params.SimpleScrollerParams;
 import com.sun.istack.NotNull;
 import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem3d;
 import offscreen.params.OffscreenRendererParams;

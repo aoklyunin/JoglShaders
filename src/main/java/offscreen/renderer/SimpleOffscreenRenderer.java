@@ -53,7 +53,26 @@ public class SimpleOffscreenRenderer extends OffscreenRenderer {
     public short[][][] calculateVisionBuffer(
             @NotNull Vector2i viewPort, @NotNull Camera camera, @NotNull List<Transform3d> objectTransforms
     ) {
-        return new short[][][]{};
+        short[][][] res = new short[viewPort.x][viewPort.y][3];
+
+        for (int i = 0; i < getObjectCnt(); i++) {
+            int centerX = (int) ((objectTransforms.get(i).getPosition().y + 1.4) / 2.4 * viewPort.x);
+            int centerY = viewPort.y / 2;
+            int rad = 4;
+            for (int posY = centerY - rad; posY <= centerY + rad; posY++) {
+                double angle = Math.asin((double) (posY - centerY) / rad);
+                int rX = (int) (rad * Math.cos(angle));
+                for (int posX = centerX - rX; posX <= centerX + rX; posX++) {
+                    if (posX < viewPort.x && posX >= 0) {
+                        res[posX][posY][0] = 255;
+                        res[posX][posY][1] = 255;
+                        res[posX][posY][2] = 255;
+                    }
+                }
+            }
+        }
+
+        return res;
     }
 
     /**
@@ -64,7 +83,12 @@ public class SimpleOffscreenRenderer extends OffscreenRenderer {
      */
     @Override
     public void render(GL2 gl2, List<Transform3d> objectTransforms) {
-
+        for (int i = 0; i < getObjectCnt(); i++) {
+            gl2.glPushMatrix();
+            objectTransforms.get(i).apply(gl2);
+            objects.get(i).render(gl2);
+            gl2.glPopMatrix();
+        }
     }
 
     /**

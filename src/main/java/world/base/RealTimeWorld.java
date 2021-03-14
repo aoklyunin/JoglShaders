@@ -1,6 +1,6 @@
 package world.base;
 
-import com.github.aoklyunin.javaScrollers.scrollers.SimpleScroller;
+import com.github.aoklyunin.javaGLHelper.scrollers.scrollers.SimpleScroller;
 import com.jogamp.opengl.GL2;
 import com.sun.istack.NotNull;
 import creature.CreatureFactory;

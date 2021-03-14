@@ -143,9 +143,6 @@ public class LifeWorldController extends RealTimeWorldController {
                 if (!GUIApplication.flgCtrl)
                     getWorld().getRealTimeWorld().getResourceField().getInfluenceFieldParams().switchRandomAdd();
                 break;
-            case KeyEvent.VK_V:
-                getWorld().getRealTimeWorld().switchRenderCreatureConnectorsMode();
-                break;
             case KeyEvent.VK_F:
                 if (GUIApplication.flgCtrl)
                     getWorld().getStoryWorld().getWorldStory().selectPrevCreature();

@@ -28,10 +28,6 @@ import static constants.Constants.RESOURCE_PATH;
  */
 public abstract class RealTimeWorld extends StoryWorld implements CreatureProcessable {
     /**
-     * флаг, нужно ли рисовать коннекторы у существ
-     */
-    private boolean renderCreatureConnectors;
-    /**
      * поле ресурса
      */
     @NotNull
@@ -76,7 +72,6 @@ public abstract class RealTimeWorld extends StoryWorld implements CreatureProces
                 getWorldParams().getStoryWorldParams().getStoryScrollerParams()
         );
 
-        renderCreatureConnectors = true;
 
     }
 
@@ -89,7 +84,6 @@ public abstract class RealTimeWorld extends StoryWorld implements CreatureProces
         super(realTimeWorld);
         this.resourceField = InfluenceFieldFactory.clone(realTimeWorld.resourceField);
         this.worldStoryScroller = new SimpleScroller(realTimeWorld.worldStoryScroller);
-        this.renderCreatureConnectors = realTimeWorld.renderCreatureConnectors;
     }
 
 
@@ -363,13 +357,6 @@ public abstract class RealTimeWorld extends StoryWorld implements CreatureProces
         return worldStoryScroller;
     }
 
-    /**
-     * Переключить режим рисования коннекторов существа
-     */
-    public void switchRenderCreatureConnectorsMode() {
-        renderCreatureConnectors = !renderCreatureConnectors;
-    }
-
 
     /**
      * Строковое представление объекта вида:
@@ -399,7 +386,6 @@ public abstract class RealTimeWorld extends StoryWorld implements CreatureProces
 
         RealTimeWorld that = (RealTimeWorld) o;
 
-        if (renderCreatureConnectors != that.renderCreatureConnectors) return false;
         if (!Objects.equals(resourceField, that.resourceField))
             return false;
         return Objects.equals(worldStoryScroller, that.worldStoryScroller);
@@ -408,7 +394,6 @@ public abstract class RealTimeWorld extends StoryWorld implements CreatureProces
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + (renderCreatureConnectors ? 1 : 0);
         result = 31 * result + (resourceField != null ? resourceField.hashCode() : 0);
         result = 31 * result + (worldStoryScroller != null ? worldStoryScroller.hashCode() : 0);
         return result;

@@ -134,6 +134,20 @@ public abstract class WorldController implements GLEventListener, AutoCloseable 
     }
 
     /**
+     * Следующее состояние истории мира
+     */
+    protected void incWorldStoryPos() {
+        getWorld().getStoryWorld().incStoryPos();
+    }
+
+    /**
+     * Предыдущее состояние истории мира
+     */
+    protected void decWorldStoryPos() {
+        getWorld().getStoryWorld().decStoryPos();
+    }
+
+    /**
      * Обработка закрытия подпрограммы
      */
     public void close() {

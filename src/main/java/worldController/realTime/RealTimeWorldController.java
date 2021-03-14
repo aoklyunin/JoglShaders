@@ -472,6 +472,15 @@ public class RealTimeWorldController extends WorldController implements MouseCon
                 fullScreenWorld = !fullScreenWorld;
                 worldCS = fullScreenWorld ? sourceFullScreenWorldCS : sourcePartScreenWorldCS;
                 break;
+            case KeyEvent.VK_RIGHT:
+                if (!GUIApplication.flgCtrl)
+                    // переходим к следующему состоянию в истории ДНК-построения
+                    incWorldStoryPos();
+                break;
+            case KeyEvent.VK_LEFT:
+                if (!GUIApplication.flgCtrl)
+                    decWorldStoryPos();
+                break;
             case KeyEvent.VK_L:
                 getWorld().getRealTimeWorld().switchRenderLogInfoMode();
                 break;

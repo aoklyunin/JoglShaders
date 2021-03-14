@@ -1,19 +1,19 @@
 package field.field3D;
 
+import com.github.aoklyunin.javaGLHelper.CaptionParams;
+import com.github.aoklyunin.javaGLHelper.GLTextController;
+import com.github.aoklyunin.javaScrollers.scrollers.ProgressBar;
 import com.jogamp.opengl.GL2;
 import com.sun.istack.NotNull;
-import coordinateSystem.CoordinateSystem2d;
-import coordinateSystem.CoordinateSystem3d;
 import field.base.InfluenceFieldState;
 import field.field3D.base.Objects3DField;
 import field.field3D.params.Food3DFieldParams;
 import field.field3D.state.CoordinateSystem3DState;
 import field.field3D.state.Food3DFieldState;
-import graphics.GLTextController;
-import math.Vector2d;
-import math.Vector3d;
-import misc.CaptionParams;
-import scrollers.scrollers.ProgressBar;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem2d;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem3d;
+import jMath.aoklyunin.github.com.vector.Vector2d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 
 import java.util.Map;
 import java.util.Objects;

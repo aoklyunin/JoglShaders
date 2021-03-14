@@ -3,11 +3,12 @@ package offscreen.renderer;
 import com.jogamp.opengl.GL2;
 import com.sun.istack.NotNull;
 import graphics.Camera;
-import math.Transform3d;
-import math.Vector2i;
+import jMath.aoklyunin.github.com.Transform3d;
+import jMath.aoklyunin.github.com.vector.Vector2i;
 import offscreen.params.OffscreenRendererParams;
 
 import java.util.List;
+
 
 /**
  * Класс простого фонового рисовальщика

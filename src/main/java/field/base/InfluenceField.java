@@ -3,12 +3,12 @@ package field.base;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jogamp.opengl.GL2;
 import com.sun.istack.NotNull;
-import coordinateSystem.CoordinateSystem3d;
 import creature.base.Creature;
 import field.InfluenceFieldFactory;
 import field.field3D.Food3DField;
 import field.field3D.base.Objects3DField;
-import math.Vector3d;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem3d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 
 import java.util.List;
 import java.util.Objects;

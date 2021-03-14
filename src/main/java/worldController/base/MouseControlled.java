@@ -1,6 +1,6 @@
 package worldController.base;
 
-import math.Vector2i;
+import jMath.aoklyunin.github.com.vector.Vector2i;
 
 /**
  * Интерфейс управления при помощи мыши

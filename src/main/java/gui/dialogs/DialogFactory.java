@@ -1,8 +1,8 @@
 package gui.dialogs;
 
+import com.github.aoklyunin.jCollections.Procedure;
 import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;
-import misc.Procedure;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;

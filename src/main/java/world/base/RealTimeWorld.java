@@ -1,16 +1,16 @@
 package world.base;
 
+import com.github.aoklyunin.javaScrollers.scrollers.SimpleScroller;
 import com.jogamp.opengl.GL2;
 import com.sun.istack.NotNull;
-import coordinateSystem.CoordinateSystem2d;
 import creature.CreatureFactory;
 import creature.base.Creature;
 import creature.base.CreatureState;
 import field.InfluenceFieldFactory;
 import field.base.InfluenceField;
-import math.Vector2d;
-import math.Vector3d;
-import scrollers.scrollers.SimpleScroller;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem2d;
+import jMath.aoklyunin.github.com.vector.Vector2d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 import world.base.interfaces.CreatureProcessable;
 import world.params.RealTimeWorldParams;
 import world.states.StoryWorldState;

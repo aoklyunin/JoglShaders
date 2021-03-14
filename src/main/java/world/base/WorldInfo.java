@@ -1,9 +1,9 @@
 package world.base;
 
+import com.github.aoklyunin.javaGLHelper.CaptionParams;
+import com.github.aoklyunin.javaGLHelper.GLConsole;
+import com.github.aoklyunin.javaGLHelper.GLTextController;
 import com.sun.istack.NotNull;
-import graphics.GLTextController;
-import misc.CaptionParams;
-import misc.GLConsole;
 import world.params.WorldParams;
 
 import java.util.HashMap;
@@ -42,7 +42,10 @@ public class WorldInfo {
         textControllers = CaptionParams.getTextControllersFromParams(
                 worldParams.getCaptionParamsMap(), clientWidth, clientHeight
         );
-        glConsole = new GLConsole(textControllers.get("console"), worldParams);
+        glConsole = new GLConsole(
+                textControllers.get("console"), worldParams.getRenderConsoleTickCnt(),
+                worldParams.getMaxConsoleLinesCnt()
+        );
     }
 
     /**

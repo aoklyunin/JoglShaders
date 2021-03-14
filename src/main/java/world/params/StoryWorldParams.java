@@ -2,9 +2,9 @@ package world.params;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.aoklyunin.javaGLHelper.CaptionParams;
+import com.github.aoklyunin.javaScrollers.params.SimpleScrollerParams;
 import com.sun.istack.NotNull;
-import misc.CaptionParams;
-import scrollers.params.SimpleScrollerParams;
 
 import java.util.List;
 import java.util.Map;

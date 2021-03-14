@@ -2,13 +2,13 @@ package field.field3D.params;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.aoklyunin.javaCombiners.ranges.primitive.DoubleRange;
+import com.github.aoklyunin.javaCombiners.ranges.vector.Vector3dRange;
+import com.github.aoklyunin.javaGLHelper.CaptionParams;
+import com.github.aoklyunin.javaScrollers.params.SimpleScrollerParams;
 import com.sun.istack.NotNull;
-import coordinateSystem.CoordinateSystem3d;
-import misc.CaptionParams;
-import misc.combiner.ranges.primitive.DoubleRange;
-import misc.combiner.ranges.vector.Vector3dRange;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem3d;
 import offscreen.params.OffscreenRendererParams;
-import scrollers.params.SimpleScrollerParams;
 
 import java.util.Map;
 import java.util.Objects;

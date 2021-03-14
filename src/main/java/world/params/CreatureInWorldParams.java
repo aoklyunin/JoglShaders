@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
 import creature.base.Creature;
-import math.Vector3d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 
 import java.util.Objects;
 

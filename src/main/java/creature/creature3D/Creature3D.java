@@ -5,7 +5,7 @@ import creature.base.Creature;
 import creature.base.CreatureState;
 import graphics.Camera;
 import graphics.ObjModel3D;
-import math.Vector2i;
+import jMath.aoklyunin.github.com.vector.Vector2i;
 
 import java.util.Arrays;
 import java.util.Objects;

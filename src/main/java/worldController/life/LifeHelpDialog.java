@@ -1,7 +1,7 @@
 package worldController.life;
 
 import com.sun.istack.NotNull;
-import misc.Algorithms;
+import jMath.aoklyunin.github.com.Algorithms;
 import worldController.realTime.RealTimeHelpDialog;
 
 /**

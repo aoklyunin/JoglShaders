@@ -1,18 +1,18 @@
 package worldController.realTime;
 
+import com.github.aoklyunin.javaScrollers.scrollers.SimpleScroller;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;
-import coordinateSystem.CoordinateSystem2d;
-import coordinateSystem.CoordinateSystem2i;
 import gui.GUIApplication;
-import math.Vector2d;
-import math.Vector2i;
-import math.Vector3d;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem2d;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem2i;
+import jMath.aoklyunin.github.com.vector.Vector2d;
+import jMath.aoklyunin.github.com.vector.Vector2i;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import scrollers.scrollers.SimpleScroller;
 import world.base.World;
 import world.states.WorldState;
 import worldController.base.GLController;

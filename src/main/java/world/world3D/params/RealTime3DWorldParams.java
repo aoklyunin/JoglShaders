@@ -2,18 +2,15 @@ package world.world3D.params;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.aoklyunin.javaGLHelper.CaptionParams;
+import com.github.aoklyunin.javaScrollers.params.SimpleScrollerParams;
 import com.sun.istack.NotNull;
-import math.Vector2d;
-import math.Vector3d;
-import misc.CaptionParams;
-import scrollers.params.RangeScrollerParams;
-import scrollers.params.SimpleScrollerParams;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 import world.params.CreatureInWorldParams;
 import world.params.RealTimeWorldParams;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Параметры трёхмерного мира реального времени

@@ -1,10 +1,7 @@
 package creature.base;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.jogamp.opengl.GL2;
 import com.sun.istack.NotNull;
-import coordinateSystem.CoordinateSystem2d;
-import coordinateSystem.CoordinateSystem3d;
 import creature.CreatureFactory;
 import creature.creature3D.Creature3D;
 import graphics.Camera;

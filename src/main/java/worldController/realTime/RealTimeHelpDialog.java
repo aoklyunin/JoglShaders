@@ -2,7 +2,7 @@ package worldController.realTime;
 
 import com.sun.istack.NotNull;
 import gui.dialogs.base.BaseHelpDialog;
-import misc.Algorithms;
+import jMath.aoklyunin.github.com.Algorithms;
 
 /**
  * Класс окна Help диалога RealTimeWorld

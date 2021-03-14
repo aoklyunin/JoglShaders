@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.sun.istack.NotNull;
-import math.Vector2d;
-import math.Vector3d;
+import jMath.aoklyunin.github.com.vector.Vector2d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 import worldController.life3D.Life3DWorldControllerParams;
 import worldController.realTime.RealTimeWorldControllerParams;
 

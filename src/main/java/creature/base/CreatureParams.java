@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.sun.istack.NotNull;
 import creature.creature3D.Creature3DParams;
 import graphics.ObjModel3DParams;
-import math.Vector3d;
 
 import java.util.Objects;
 

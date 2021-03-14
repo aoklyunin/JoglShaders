@@ -3,13 +3,12 @@ package graphics;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jogamp.opengl.glu.GLU;
 import com.sun.istack.NotNull;
-import linearAlgebra.LinearAlgebra;
-import math.Vector2d;
-import math.Vector3d;
+import jMath.aoklyunin.github.com.linearAlgebra.LinearAlgebra;
+import jMath.aoklyunin.github.com.vector.Vector2d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 import org.joml.Matrix4d;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
-import org.joml.Vector3f;
 import org.lwjgl.BufferUtils;
 
 import java.nio.DoubleBuffer;

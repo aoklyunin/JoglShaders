@@ -3,7 +3,7 @@ package worldController.base;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.glu.GLU;
 import com.sun.istack.Nullable;
-import coordinateSystem.CoordinateSystem2d;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem2d;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

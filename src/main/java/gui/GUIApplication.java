@@ -8,7 +8,7 @@ import com.jogamp.opengl.awt.GLCanvas;
 import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;
 import gui.dialogs.HelpDialogFactory;
-import math.Vector2i;
+import jMath.aoklyunin.github.com.vector.Vector2i;
 import worldController.WorldControllerParamsFactory;
 import worldController.base.WorldController;
 import worldController.base.WorldControllerParams;

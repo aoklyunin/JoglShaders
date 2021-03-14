@@ -2,8 +2,8 @@ package field.field3D.state;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
-import coordinateSystem.CoordinateSystem3d;
-import math.Vector3d;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem3d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 
 import java.util.Objects;
 

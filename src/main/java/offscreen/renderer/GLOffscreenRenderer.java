@@ -5,8 +5,8 @@ import com.jogamp.opengl.glu.GLU;
 import com.jogamp.opengl.util.GLBuffers;
 import com.sun.istack.NotNull;
 import graphics.Camera;
-import math.Transform3d;
-import math.Vector2i;
+import jMath.aoklyunin.github.com.Transform3d;
+import jMath.aoklyunin.github.com.vector.Vector2i;
 import offscreen.params.OffscreenRendererParams;
 
 import javax.imageio.ImageIO;

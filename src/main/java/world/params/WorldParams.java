@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.github.aoklyunin.javaGLHelper.CaptionParams;
 import com.sun.istack.NotNull;
-import misc.CaptionParams;
 import world.world3D.params.RealTime3DWorldParams;
 
 import java.util.List;

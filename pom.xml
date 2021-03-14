@@ -49,7 +49,43 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>jMath-mvn-repo</id>
+            <url>https://raw.github.com/aoklynin/jMath/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencies>
+        <dependency>
+            <groupId>com.github.aoklyunin</groupId>
+            <artifactId>javaScrollers</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.aoklyunin</groupId>
+            <artifactId>jCollections</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.aoklyunin</groupId>
+            <artifactId>javaCombiners</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.aoklyunin</groupId>
+            <artifactId>jMath</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.aoklyunin</groupId>
+            <artifactId>javaGLHelper</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.jogamp.gluegen</groupId>
             <artifactId>gluegen-rt-main</artifactId>

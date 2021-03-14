@@ -3,8 +3,7 @@ package field.field3D.state;
 import com.sun.istack.NotNull;
 import field.base.InfluenceFieldState;
 import field.field3D.base.Objects3DField;
-import math.Transform3d;
-import world.world3D.states.RealTime3DWorldState;
+import jMath.aoklyunin.github.com.Transform3d;
 
 import java.util.List;
 import java.util.Objects;

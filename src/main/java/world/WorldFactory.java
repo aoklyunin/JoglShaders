@@ -2,8 +2,8 @@ package world;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.istack.NotNull;
-import math.Vector2d;
-import math.Vector3d;
+import jMath.aoklyunin.github.com.vector.Vector2d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import world.base.World;

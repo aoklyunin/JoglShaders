@@ -7,7 +7,7 @@ import field.base.InfluenceFieldParams;
 import field.field3D.Food3DField;
 import field.field3D.params.Food3DFieldParams;
 import field.field3D.params.Objects3DFieldParams;
-import math.Vector3d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
 
 import java.io.File;
 import java.io.IOException;

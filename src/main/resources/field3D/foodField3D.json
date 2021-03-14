@@ -57,7 +57,7 @@
   },
   "foodMovingRangeChangeRange": {
     "name": "foodMovingRangeChangeRange",
-    "@class": "misc.combiner.ranges.vector.Vector3dRange",
+    "@class": "com.github.aoklyunin.javaCombiners.ranges.vector.Vector3dRange",
     "min": {
       "x": 0.0,
       "y": 0.0,
@@ -73,13 +73,13 @@
   "initFoodMovingSpeed": 0.005,
   "foodMovingSpeedChangeRange": {
     "name": "foodMovingRangeChangeRange",
-    "@class": "misc.combiner.ranges.primitive.DoubleRange",
+    "@class": "com.github.aoklyunin.javaCombiners.ranges.primitive.DoubleRange",
     "min": 0.0,
     "max": 0.02,
     "stepCnt": 20
   },
   "foodMovingRangeScrollerParams": {
-    "@class": "scrollers.params.SimpleScrollerParams",
+    "@class": "com.github.aoklyunin.javaScrollers.params.SimpleScrollerParams",
     "type": "HORIZONTAL",
     "renderPosMin": 0.94,
     "renderPosMax": 0.95,
@@ -89,7 +89,7 @@
     "accuracy": 0.0
   },
   "foodMovingSpeedScrollerParams": {
-    "@class": "scrollers.params.SimpleScrollerParams",
+    "@class": "com.github.aoklyunin.javaScrollers.params.SimpleScrollerParams",
     "type": "HORIZONTAL",
     "renderPosMin": 0.96,
     "renderPosMax": 0.97,

@@ -3,10 +3,10 @@ package creature.creature3D;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
-import coordinateSystem.CoordinateSystem2i;
 import creature.base.CreatureParams;
 import graphics.ObjModel3DParams;
-import math.Vector2i;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem2i;
+import jMath.aoklyunin.github.com.vector.Vector2i;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

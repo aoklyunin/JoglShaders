@@ -2,13 +2,13 @@ package graphics;
 
 import com.jogamp.opengl.GL2;
 import com.sun.istack.NotNull;
-import coordinateSystem.CoordinateSystem3d;
 import de.javagl.obj.Obj;
 import de.javagl.obj.ObjData;
 import de.javagl.obj.ObjReader;
 import de.javagl.obj.ObjUtils;
-import math.Vector3d;
-import math.Vector3f;
+import jMath.aoklyunin.github.com.coordinateSystem.CoordinateSystem3d;
+import jMath.aoklyunin.github.com.vector.Vector3d;
+import jMath.aoklyunin.github.com.vector.Vector3f;
 
 import java.io.File;
 import java.io.FileInputStream;

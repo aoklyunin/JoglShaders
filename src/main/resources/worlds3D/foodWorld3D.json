@@ -32,7 +32,7 @@
     }
   ],
   "storyScrollerParams": {
-    "@class": "scrollers.params.SimpleScrollerParams",
+    "@class": "com.github.aoklyunin.javaScrollers.params.SimpleScrollerParams",
     "type": "HORIZONTAL",
     "renderPosMin": 0.005,
     "renderPosMax": 0.045,

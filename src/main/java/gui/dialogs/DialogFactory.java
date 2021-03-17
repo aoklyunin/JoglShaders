@@ -1,6 +1,5 @@
 package gui.dialogs;
 
-import com.github.aoklyunin.jCollections.Procedure;
 import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;
 
@@ -109,10 +108,10 @@ public class DialogFactory {
      * @param msg  сообщение диалога
      * @param func что нужно сделать, если подтверждение получено
      */
-    public static void showApplyDialog(@NotNull String msg, @NotNull Procedure func) {
+    public static void showApplyDialog(@NotNull String msg, @NotNull Runnable func) {
         int input = JOptionPane.showConfirmDialog(null, Objects.requireNonNull(msg));
         if (input == 0)
-            Objects.requireNonNull(func).operate();
+            Objects.requireNonNull(func).run();
     }
 
     /**

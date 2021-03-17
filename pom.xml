@@ -13,6 +13,7 @@
         <joml.version>1.9.25</joml.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -34,8 +35,8 @@
                 <version>3.8.0</version>
                 <configuration>
                     <release>15</release>
-                    <source>14</source>
-                    <target>14</target>
+                    <source>15</source>
+                    <target>15</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>

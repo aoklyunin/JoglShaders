@@ -6,8 +6,9 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <java.version>15</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
         <joml.version>1.9.25</joml.version>
@@ -34,9 +35,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <release>15</release>
-                    <source>15</source>
-                    <target>15</target>
+                    <release>${java.version}</release>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
@@ -54,7 +53,23 @@
     <repositories>
         <repository>
             <id>jMath-mvn-repo</id>
-            <url>https://raw.github.com/aoklynin/jMath/mvn-repo/</url>
+            <url>https://raw.github.com/aoklyunin/jMath/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jCollections-mvn-repo</id>
+            <url>https://raw.github.com/aoklyunin/jCollections/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>javaGLHelper-mvn-repo</id>
+            <url>https://raw.github.com/aoklyunin/javaGLHelper/mvn-repo/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
